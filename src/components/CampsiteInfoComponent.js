@@ -8,7 +8,7 @@ import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 
 const required = val => val && val.length;
 const maxLength = len => val => !val || (val.length <= len);
-const minLength = len => val => val && (val.length >= len);
+const minLength = len => val => val && (val.length >= len); 
 
 class CommentForm extends Component {
     constructor(props) {
@@ -100,7 +100,12 @@ function RenderCampsite({campsite}) {
                 in
                 transformProps={{
                     exitTransform: 'scale(0.5) translateY(-50%)'
-                }}>
+                }}
+                fadeProps={{
+                    enterOpacity: 0.99,
+                    exitOpacity: 0.30
+                }}
+            >
                 <Card>
                     <CardImg top src={baseUrl + campsite.image} alt={campsite.name} />
                     <CardBody>
